@@ -5,7 +5,7 @@
       user:
         name: "{{ item.name }}"
         group: "{{ item.group }}"
-        append: no
+        state: absent
       loop:
         - {name: 'anees', group: 'root'}
         - {name: 'tina', group: 'admins'}
