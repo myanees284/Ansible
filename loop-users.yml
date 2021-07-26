@@ -4,11 +4,12 @@
     - name: Create a group
       group:
         name: admins
-        state: present
+        state: absent
     - name: Create user
       user:
         name: "{{ item.name }}"
         group: "{{ item.group }}"
+        state: absent
       loop:
         - {name: 'anees', group: 'root'}
         - {name: 'tina', group: 'admins'}
