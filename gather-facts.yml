@@ -1,0 +1,8 @@
+- hosts: tomcat
+  become: True
+  tasks :
+    - name: Install package based on OS name
+      yum:
+        name: docker
+        state: present
+      when: ansible_os_family=="RedHat"
