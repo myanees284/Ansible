@@ -6,6 +6,6 @@
         name: httpd
         state: absent
     - name: Remove App
-      - file:
-          path: /var/www/html/
-          state: absent
+      file:
+        path: /var/www/html/
+        state: absent
