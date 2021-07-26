@@ -1,4 +1,4 @@
-- hosts: 15.0.0.59
+- hosts: tomcat
   become: True
   tasks:
     - name: Remove Apache
