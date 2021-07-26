@@ -1,0 +1,14 @@
+- hosts: tomcat
+  become: True
+  tasks:
+    - name: Create a group
+      group:
+        name: admins
+        state: present
+    - name: Create user
+      user:
+        name: "{{ item.name }}"
+        group: "{{ item.group }}"
+      loop:
+        - {name: 'anees', group: 'root'}
+        - {name: 'tina', group: 'admins'}
