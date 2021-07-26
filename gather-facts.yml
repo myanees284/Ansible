@@ -4,5 +4,5 @@
     - name: Install package based on OS name
       yum:
         name: docker
-        state: present
+        state: absent
       when: ansible_os_family=="RedHat"
