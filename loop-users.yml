@@ -10,5 +10,5 @@
         name: "{{ item.name }}"
         group: "{{ item.group }}"
       loop:
-        - {name: 'anees', group: 'root'}
+        - {name: 'anees', group: 'admins'}
         - {name: 'tina', group: 'admins'}
