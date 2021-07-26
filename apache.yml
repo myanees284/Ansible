@@ -4,7 +4,7 @@
     - name: Install Apache
       yum:
         name: httpd
-        state: absent
+        state: present
     - name: copy local to remote machine
       copy:
         src: index.html
