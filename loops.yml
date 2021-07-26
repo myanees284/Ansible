@@ -1,10 +1,11 @@
 - hosts: tomcat
   become: True
-  Task: Install Packages
-  yum:
-    name:
-    state: present
-    loop:
-      - git
-      - docker
-      - maven
+  tasks:
+    - name: Install packages
+      yum:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - git
+        - docker
+        - maven
