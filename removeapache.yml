@@ -1,0 +1,11 @@
+- hosts: 15.0.0.59
+  become: True
+  tasks:
+    - name: Remove Apache
+      yum:
+        name: httpd
+        state: absent
+    - name: Remove App
+      - file:
+          path: /var/www/html/
+          state: absent

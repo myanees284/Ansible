@@ -1,9 +1,10 @@
-- host: 15.0.0.43
+- hosts: 15.0.0.43
+  become: True
   tasks:
     - name: Install Apache
       yum:
         name: httpd
-        state: present
+        state: absent
     - name: copy local to remote machine
       copy:
         src: index.html
