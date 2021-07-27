@@ -1,0 +1,30 @@
+- hosts: tomcat
+  become: True
+  tasks:
+    - name: Install Apache
+      yum:
+        name: httpd
+        status: present
+      tags:
+        - Apache
+    - name: start and enable apache
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+      tags:
+        - Enable
+    - name: Deploy App
+      copy:
+        src: index.html
+        dest: /var/www/html
+      tags:
+        - Deploy
+      notify:
+        - Restart
+  handlers:
+        - name: Restart
+          service:
+            name: httpd
+            state: restarted
+    
