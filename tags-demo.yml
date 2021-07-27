@@ -8,8 +8,8 @@
       tags:
         - Apache
     - name: Install git
-        yum:
-            name: git
-            state: present
-        tags:
-            - Git
+      yum:
+        name: git
+        state: present
+      tags:
+        - Git
