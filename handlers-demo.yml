@@ -4,7 +4,7 @@
     - name: Install Apache
       yum:
         name: httpd
-        status: present
+        state: present
       tags:
         - Apache
 
