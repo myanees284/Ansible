@@ -17,10 +17,10 @@
         - Enable
 
     - lineinfile:
-      path: /etc/httpd/conf/httpd.conf
-      regexp: '^Listen '
-      insertafter: '^#Listen '
-      line: 'Listen 8080'
+        path: /etc/httpd/conf/httpd.conf
+        regexp: '^Listen '
+        insertafter: '^#Listen '
+        line: 'Listen 8080'
       notify:
         - Restart
 
@@ -32,7 +32,7 @@
         - Deploy
       notify:
         - Restart
-        
+
   handlers:
     - name: Restart
       service:
