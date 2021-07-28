@@ -7,6 +7,7 @@
         status: present
       tags:
         - Apache
+
     - name: start and enable apache
       service:
         name: httpd
@@ -14,6 +15,7 @@
         enabled: yes
       tags:
         - Enable
+
     - name: Deploy App
       copy:
         src: index.html
@@ -23,8 +25,7 @@
       notify:
         - Restart
   handlers:
-        - name: Restart
-          service:
-            name: httpd
-            state: restarted
-    
+    - name: Restart
+      service:
+        name: httpd
+        state: restarted
