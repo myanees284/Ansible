@@ -1,0 +1,40 @@
+- hosts: tomcat
+  become: True
+  tasks:
+    - name: Install Apache
+      yum:
+        name: httpd
+        state: present
+      tags:
+        - Apache
+
+    - name: start and enable apache
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+      tags:
+        - Enable
+
+    - lineinfile:
+      path: /etc/httpd/conf/httpd.conf
+      regexp: '^Listen '
+      insertafter: '^#Listen '
+      line: 'Listen 8080'
+      notify:
+        - Restart
+
+    - name: Deploy App
+      copy:
+        src: index.html
+        dest: /var/www/html
+      tags:
+        - Deploy
+      notify:
+        - Restart
+        
+  handlers:
+    - name: Restart
+      service:
+        name: httpd
+        state: restarted
