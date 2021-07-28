@@ -4,12 +4,13 @@
     - name: Install Apache
       yum:
         name: httpd
-        state: present
+        state: absent
       tags:
         - Apache
+
     - name: Install git
       yum:
         name: git
-        state: present
+        state: absent
       tags:
         - Git
