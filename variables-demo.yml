@@ -1,7 +1,7 @@
 - hosts: tomcat
   become: True
   vars_files:
-    -vars.yml
+    - vars.yml
   tasks:
     - name: Install Apache
       yum:
