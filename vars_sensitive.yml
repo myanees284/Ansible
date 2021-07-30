@@ -1,4 +1,4 @@
-apache_port: 8076
+apache_port: 8054
 username: anees
 password: !vault |
           $ANSIBLE_VAULT;1.1;AES256

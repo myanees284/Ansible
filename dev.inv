@@ -1,3 +1,6 @@
 [tomcat]
-15.0.0.8 ansible_user=ec2-user
-15.0.0.45 ansible_user=ec2-user
+15.0.0.8
+15.0.0.45
+
+[tomcat-vars]
+ansible_user=ec2-user
