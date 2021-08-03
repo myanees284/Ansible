@@ -1,0 +1,7 @@
+- hosts: tomcat
+  become: true
+  tasks:
+    - name: Install Java
+      yum:
+        name: java
+        state: latest
