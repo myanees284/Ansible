@@ -1,7 +1,17 @@
-- hosts: tomcat
-  become: true
+- hosts: tag_ansible_node
+  become: True
+  
   tasks:
     - name: Install Java
       yum:
         name: java
-        state: absent
+        state: latest
+
+    - name: Download tomcat and unarchive
+      unarchive:
+        src: http://mirrors.estointernet.in/apache/tomcat/tomcat-8/v8.5.46/bin/apache-tomcat-8.5.46.tar.gz
+        dest: /usr/local/
+        remote_src: True
+    
+    - name: Start tomcat service
+      shell: nohup /usr/local/apache-tomcat-8.5.46/bin/startup.sh
