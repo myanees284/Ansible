@@ -9,7 +9,7 @@
 
     - name: Download tomcat and unarchive
       unarchive:
-        src: http://mirrors.estointernet.in/apache/tomcat/tomcat-8/v8.5.46/bin/apache-tomcat-8.5.46.tar.gz
+        src: https://downloads.apache.org/tomcat/tomcat-8/v8.5.69/bin/apache-tomcat-8.5.69.tar.gz
         dest: /usr/local/
         remote_src: True
     
