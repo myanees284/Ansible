@@ -1,5 +1,7 @@
 - hosts: tag_ansible_node
   become: True
+  var_files:
+    - tomcat_vars
   
   tasks:
     - name: Install Java
@@ -9,9 +11,9 @@
 
     - name: Download tomcat and unarchive
       unarchive:
-        src: https://downloads.apache.org/tomcat/tomcat-8/v8.5.69/bin/apache-tomcat-8.5.69.tar.gz
+        src: "{{ tomcat_url }}"
         dest: /usr/local/
         remote_src: True
     
     - name: Start tomcat service
-      shell: nohup /usr/local/apache-tomcat-8.5.69/bin/startup.sh
+      shell: nohup /usr/local/{{ tomcat_pkg }}/startup.sh
