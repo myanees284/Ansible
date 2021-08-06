@@ -16,4 +16,4 @@
         remote_src: True
     
     - name: Start tomcat service
-      shell: nohup /usr/local/{{ tomcat_pkg }}/startup.sh
+      shell: nohup /usr/local/{{ tomcat_pkg }}/bin/startup.sh
