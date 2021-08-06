@@ -1,7 +1,7 @@
 - hosts: tag_ansible_node
   become: True
   vars_files:
-    - tomcat_vars
+    - tomcat_vars.yml
   
   tasks:
     - name: Install Java
