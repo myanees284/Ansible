@@ -2,7 +2,7 @@
   become: True
   tasks:
    - stat:
-       path: /home/ec2-user/Ansible
+       path: /home/ec2-user/Ansible/nodes.pem
      register: sts
 
    - debug:
