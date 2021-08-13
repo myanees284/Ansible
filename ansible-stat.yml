@@ -1,0 +1,9 @@
+- hosts: localhost
+  become: True
+  tasks:
+   - stat:
+      path: /home/ec2-user/Ansible
+      register: stat
+
+   - debug:
+      msg: "{{ stat }}"
