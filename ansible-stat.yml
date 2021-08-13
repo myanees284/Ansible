@@ -2,8 +2,8 @@
   become: True
   tasks:
    - stat:
-      path: /home/ec2-user/Ansible
-      register: stat
+       path: /home/ec2-user/Ansible
+     register: sts
 
    - debug:
-      msg: "{{ stat }}"
+      msg: "{{ sts.stat }}"
